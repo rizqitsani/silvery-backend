@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import config from '@/config';
 import errorMiddleware from '@/middlewares/error';
+import { createConnection } from 'typeorm';
 
 const startServer = async () => {
   const app = express();
@@ -13,6 +14,8 @@ const startServer = async () => {
   app.use(helmet());
   app.use(cors());
   app.use(cookieParser());
+
+  await createConnection();
 
   app.use('/static', express.static('uploads'));
 
