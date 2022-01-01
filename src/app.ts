@@ -1,11 +1,15 @@
+import 'reflect-metadata';
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
+import { createConnection, useContainer } from 'typeorm';
+import { Container } from 'typeorm-typedi-extensions';
 
 import config from '@/config';
 import errorMiddleware from '@/middlewares/error';
-import { createConnection } from 'typeorm';
+import routes from '@/routes';
 
 const startServer = async () => {
   const app = express();
@@ -15,6 +19,7 @@ const startServer = async () => {
   app.use(cors());
   app.use(cookieParser());
 
+  useContainer(Container);
   await createConnection();
 
   app.use('/static', express.static('uploads'));
@@ -22,7 +27,7 @@ const startServer = async () => {
   const apiRoutes = express.Router();
 
   app.use('/api', apiRoutes);
-  // apiRoutes.use('/v1', routes);
+  apiRoutes.use('/v1', routes);
 
   // if error is not an instanceOf ApiError, convert it.
   app.use(errorMiddleware.converter);
