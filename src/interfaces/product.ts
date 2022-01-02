@@ -3,7 +3,7 @@ export class CreateProductDto {
   price: number;
   description: string;
   stock: number;
-  available: boolean;
+  available: string;
 }
 
 export class UpdateProductDto {
@@ -11,5 +11,5 @@ export class UpdateProductDto {
   price: number;
   description: string;
   stock: number;
-  available: boolean;
+  available: string;
 }

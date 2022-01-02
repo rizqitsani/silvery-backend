@@ -41,7 +41,7 @@ export default class ProductService {
       price: createProductDto.price,
       description: createProductDto.description,
       stock: createProductDto.stock,
-      available: createProductDto.available,
+      available: createProductDto.available === 'true',
     });
 
     const productPhotos: ProductPhoto[] = [];
@@ -72,7 +72,7 @@ export default class ProductService {
     product.price = updateProductDto.price;
     product.description = updateProductDto.description;
     product.stock = updateProductDto.stock;
-    product.available = updateProductDto.available;
+    product.available = updateProductDto.available === 'true';
 
     if (updatedProductFiles.length > 0) {
       await this.productPhotoRepository.remove(product.photos);
