@@ -26,7 +26,7 @@ export default class UserService {
   }
 
   async findByEmail(email: string) {
-    const user = await this.userRepository.findOneOrFail({
+    const user = await this.userRepository.findOne({
       where: { email },
     });
     return user;

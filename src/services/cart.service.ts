@@ -1,4 +1,4 @@
-import { Inject } from 'typedi';
+import { Inject, Service } from 'typedi';
 import { Repository } from 'typeorm';
 import { InjectRepository } from 'typeorm-typedi-extensions';
 
@@ -6,6 +6,7 @@ import Cart from '@/models/cart.model';
 import ProductService from '@/services/product.service';
 import UserService from '@/services/user.service';
 
+@Service()
 export default class CartService {
   constructor(
     @InjectRepository(Cart)
