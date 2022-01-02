@@ -35,6 +35,14 @@ export default class TransactionService {
     return transactions;
   }
 
+  async getStatistics(): Promise<number> {
+    const { sum } = await this.transactionRepository
+      .createQueryBuilder('transaction')
+      .select('SUM(transaction.total)', 'sum')
+      .getRawOne();
+    return sum;
+  }
+
   async findById(id: string) {
     const transactions = await this.transactionRepository.findOneOrFail({
       relations: ['items', 'items.product', 'items.product.photos', 'user'],

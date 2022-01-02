@@ -37,7 +37,7 @@ export default class UserService {
     return user;
   }
 
-  async getCount() {
+  async getStatistics() {
     const count = await this.userRepository.count();
     return count;
   }

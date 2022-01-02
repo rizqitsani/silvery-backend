@@ -24,6 +24,16 @@ export default class ProductService {
     return products;
   }
 
+  async getStatistics() {
+    const active = await this.productRepository.count({
+      where: { available: true },
+    });
+    const non = await this.productRepository.count({
+      where: { available: false },
+    });
+    return { active, non };
+  }
+
   async findById(id: string) {
     const product = await this.productRepository.findOneOrFail(id, {
       relations: ['photos'],
