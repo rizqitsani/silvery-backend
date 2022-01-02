@@ -662,6 +662,13 @@ astral-regex@^2.0.0:
   resolved "https://registry.yarnpkg.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
+axios@^0.21.1:
+  version "0.21.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
+  dependencies:
+    follow-redirects "^1.14.0"
+
 balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
@@ -1577,6 +1584,11 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.2.tgz#64bfed5cb68fe3ca78b3eb214ad97b63bedce561"
   integrity sha512-JaTY/wtrcSyvXJl4IMFHPKyFur1sE9AUqc0QnhOaJ0CxHtAoIV8pYDzeEfAaNEtGkOfq4gr3LBFmdXW5mOQFnA==
 
+follow-redirects@^1.14.0:
+  version "1.14.6"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.6.tgz#8cfb281bbc035b3c067d6cd975b0f6ade6e855cd"
+  integrity sha512-fhUl5EwSJbbl8AR+uYL2KQDxLkdSjZGR36xy46AO7cOMTrCMON6Sa28FmAnC2tRTDbd/Uuzz3aJBv7EBN7JH8A==
+
 forwarded@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.2.0.tgz#2269936428aad4c15c7ebe9779a84bf0b2a81811"
@@ -1945,6 +1957,11 @@ ipaddr.js@1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.9.1.tgz#bff38543eeb8984825079ff3a2a8e6cbd46781b3"
   integrity sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
+
+is-any-type@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/is-any-type/-/is-any-type-0.0.3.tgz#029a21b28215cbfa3d4b2ee16c893cc8ffbcc062"
+  integrity sha512-rw2B2XCU7QVJcEc7my183wpDSqgZdXc0aaYgzkMg4rFKSyna4RUR/6xCoIasqbYI3/v7LB1bOqpj9uFpWLOZNA==
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -2383,6 +2400,15 @@ micromatch@^4.0.4:
   dependencies:
     braces "^3.0.1"
     picomatch "^2.2.3"
+
+midtrans-node-client@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/midtrans-node-client/-/midtrans-node-client-0.0.6.tgz#8955d0c2fb325c0c78affad426e8d2fcd3d93e1c"
+  integrity sha512-NuU4P+svet37uY0hQ4ViW+fRgs8YhwaqGjmz+vfvT+0rHkwas7+w1sCRR9ZzqoTTfZA1CSCP5DNC8+N4zJGKAA==
+  dependencies:
+    axios "^0.21.1"
+    is-any-type "0.0.3"
+    lodash "^4.17.21"
 
 mime-db@1.51.0:
   version "1.51.0"
