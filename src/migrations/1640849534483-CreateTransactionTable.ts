@@ -56,19 +56,22 @@ export class CreateTransactionTable1640849534483 implements MigrationInterface {
           },
           {
             name: 'shipping_status',
-            type: 'varchar',
+            type: 'enum',
+            enum: ['Belum dibayar', 'Dikemas', 'Dikirim', 'Selesai'],
+            default: '"Belum dibayar"',
           },
           {
             name: 'fraud_status',
             type: 'varchar',
           },
+          // TODO: add default NULL (https://github.com/typeorm/typeorm/issues/5509)
           {
             name: 'transaction_time',
-            type: 'date',
+            type: 'datetime',
           },
           {
             name: 'settlement_time',
-            type: 'date',
+            type: 'datetime',
           },
           {
             name: 'created_at',
