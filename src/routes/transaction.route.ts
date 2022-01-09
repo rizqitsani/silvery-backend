@@ -105,7 +105,7 @@ router.route('/notification').post(async (req, res, next) => {
     const response = await snap.transaction.notification(req.body);
     await transactionServiceInstance.updateTransactionStatus(response);
 
-    return res.status(StatusCodes.OK);
+    return res.sendStatus(StatusCodes.OK);
   } catch (error) {
     return next(error);
   }
